@@ -1,4 +1,4 @@
-package org.example.springsamples.data_jpa_hibernate.config;
+package org.example.springsamples.config;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,10 +11,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 @Configuration
-@ComponentScan("org.example.springsamples.data_jpa_hibernate")
+@ComponentScan("org.example.springsamples")
 @EnableTransactionManagement
 
-public class AccountConfigDatajpa {
+public class AppConfigDatajpa {
 @Bean
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource();
@@ -27,7 +27,7 @@ public class AccountConfigDatajpa {
     public LocalContainerEntityManagerFactoryBean entityManager() {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource());
-        emf.setPackagesToScan("org.example.springsamples.data_jpa_hibernate");
+        emf.setPackagesToScan("org.example.springsamples");
 
         HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
         emf.setJpaVendorAdapter(hibernateJpaVendorAdapter);
@@ -40,7 +40,6 @@ public class AccountConfigDatajpa {
         return emf;
     }
     @Bean
-
     public JpaTransactionManager transactionManager(){
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManager().getObject());

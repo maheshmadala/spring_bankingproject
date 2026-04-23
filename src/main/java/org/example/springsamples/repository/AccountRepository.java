@@ -1,8 +1,8 @@
-package org.example.springsamples.data_jpa_hibernate.repository;
+package org.example.springsamples.repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
-import org.example.springsamples.data_jpa_hibernate.entity.Account;
+import org.example.springsamples.entity.Account;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 
         @Transactional
         public void save(Account acc){
-            entityManager.persist(acc);
+            entityManager.merge(acc);
         }
 
         public Account findById(Long id){

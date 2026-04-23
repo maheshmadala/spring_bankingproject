@@ -1,4 +1,4 @@
-package org.example.springsamples.data_jpa_hibernate.entity;
+package org.example.springsamples.entity;
 
 import jakarta.persistence.*;
 
