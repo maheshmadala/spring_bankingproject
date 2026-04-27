@@ -20,6 +20,12 @@ public class Transaction {
     @Column(name = "amount")
     private  double amount;
 
+    @Column(name = "from_acc")
+    private  Long fromAcc;
+
+    @Column(name = "to_acc")
+    private  Long toAcc;
+
     public long getTxnId() {
         return txnId;
     }
@@ -43,5 +49,17 @@ public class Transaction {
     }
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+    public long getFromAcc() {
+        return fromAcc;
+    }
+    public void setFromAcc(long fromAcc) {
+        this.fromAcc = fromAcc;
+    }
+    public long getToAcc() {
+        return toAcc;
+    }
+    public void setToAcc(long toAcc) {
+        this.toAcc= toAcc;
     }
 }
