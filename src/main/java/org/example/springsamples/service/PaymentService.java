@@ -1,4 +1,4 @@
-package org.example.springsamples.spring_AOP;
+package org.example.springsamples.service;
 
 import org.example.springsamples.entity.Account;
 import org.example.springsamples.entity.Transaction;

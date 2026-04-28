@@ -1,9 +1,6 @@
 package org.example.springsamples.service;
 import org.example.springsamples.entity.Account;
-import org.example.springsamples.entity.Transaction;
 import org.example.springsamples.repository.AccountRepository;
-import org.example.springsamples.repository.TransactionRepository;
-import org.example.springsamples.spring_AOP.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

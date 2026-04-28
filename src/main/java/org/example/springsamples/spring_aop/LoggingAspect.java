@@ -1,4 +1,4 @@
-package org.example.springsamples.spring_AOP;
+package org.example.springsamples.spring_aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -14,7 +14,7 @@ import java.util.Arrays;
 @Aspect
 public class LoggingAspect {
 
-    @Before("execution(* org.example.springsamples.spring_AOP.PaymentService.*(..))")
+    @Before("execution(* org.example.springsamples.service.PaymentService.*(..))")
     public void before(JoinPoint jp) {
         String id = jp.getSignature().getName();
         Object[] args = jp.getArgs();
@@ -22,7 +22,7 @@ public class LoggingAspect {
         System.out.println("Logging Before Payment Method Execution. MethodId: "
                 + id + " args: " + Arrays.asList(args));
     }
-    @After("execution(* org.example.springsamples.spring_AOP.PaymentService.*(..))")
+    @After("execution(* org.example.springsamples.service.PaymentService.*(..))")
     public void after(JoinPoint jp){
         String id = jp.getSignature().getName();
         Object[] args = jp.getArgs();
@@ -31,7 +31,7 @@ public class LoggingAspect {
                 + id + " args: " + Arrays.asList(args));
     }
 
-    @Around("execution(* org.example.springsamples.spring_AOP.PaymentService.*(..))")
+    @Around("execution(* org.example.springsamples.service.PaymentService.*(..))")
     public Object around(ProceedingJoinPoint jp) throws Throwable {
 
         String id  = jp.getSignature().getName();
